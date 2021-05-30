@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 
 
-    $('.multi-img-view').click(function(){
+    $('.multi-img-view').hover(function(){
         $Src= $(this).attr('src');
 
         $('.Big-img-view').attr('src',$Src);

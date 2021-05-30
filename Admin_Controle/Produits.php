@@ -394,10 +394,10 @@
                                     for($i=0;$i<1;$i++)
                                     {?>
                                         <img/>
-                                        <!-- <img class="Big-img-view" id='zoomImg' src='avatar/<?php echo $res[$i];?>'/> -->
+                                        <img class="Big-img-view" id='zoomImg' src='avatar/<?php echo $res[$i];?>'/>
                                         <!-- <a  href='avatar/<?php echo $res[$i];?>' class="MagicZoom" data-options="zoomPosition: inner"><img class="Big-img-view" id='zoomImg' src='avatar/<?php echo $res[$i];?>' /></a> -->
 
-                                    <a href='avatar/<?php echo $res[$i];?>' class="MagicZoom" id="jeans" data-options="selectorTrigger: hover; transitionEffect: false;"><img src='avatar/<?php echo $res[$i];?>' /></a>
+                                    <!-- <a href='avatar/<?php echo $res[$i];?>' class="MagicZoom" id="jeans" data-options="selectorTrigger: hover; transitionEffect: false;"><img src='avatar/<?php echo $res[$i];?>' /></a> -->
                                 <?php }?>
 
                         </div>
@@ -453,8 +453,8 @@
                                     $count=count($res)-1;
                                     for($i=0;$i<$count;$i++)
                                     {?>
-                                        <img />
-                                    <a data-zoom-id="jeans" href='avatar/<?php echo $res[$i];?>' data-image='avatar/<?php echo $res[$i];?>'><img class="multi-img-view" src='avatar/<?php echo $res[$i];?>' /></a>
+                                        <img class="multi-img-view" id='zoomImg' src='avatar/<?php echo $res[$i];?>'/>
+                                    <!-- <a data-zoom-id="jeans" href='avatar/<?php echo $res[$i];?>' data-image='avatar/<?php echo $res[$i];?>'><img class="multi-img-view" src='avatar/<?php echo $res[$i];?>' /></a> -->
                                 <?php }?>
                             </div>
                         </div>
