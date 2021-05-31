@@ -385,21 +385,17 @@
                 <h1 class="text-center  title-h">Le produit</h1>
                 <div class="container-view">
 
-                        <div class="image" id="img-container">
-                            <!--<div id="lens"></div>-->
+                        <div class="image" id="imgContainer">
+                            <!-- <div id="lens"></div> -->
                             <?php
                                     $res=$row[7];
                                     $res=explode(" ",$res);
                                     $count=count($res)-1;
                                     for($i=0;$i<1;$i++)
                                     {?>
-                                        <img/>
+                                        
                                         <img class="Big-img-view" id='zoomImg' src='avatar/<?php echo $res[$i];?>'/>
-                                        <!-- <a  href='avatar/<?php echo $res[$i];?>' class="MagicZoom" data-options="zoomPosition: inner"><img class="Big-img-view" id='zoomImg' src='avatar/<?php echo $res[$i];?>' /></a> -->
-
-                                    <!-- <a href='avatar/<?php echo $res[$i];?>' class="MagicZoom" id="jeans" data-options="selectorTrigger: hover; transitionEffect: false;"><img src='avatar/<?php echo $res[$i];?>' /></a> -->
                                 <?php }?>
-
                         </div>
 
                         <div class="title-P">

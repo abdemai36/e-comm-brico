@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../index.php">
                         <img src="Layout/Images/go_to.png" alt="">
                         Allez à site
                     </a>
@@ -84,6 +84,12 @@
                     <a href="Index.php">
                         <img src="Layout/Images/statistics.png" alt="">
                         statistics
+                    </a>
+                </li>
+                <li>
+                    <a href="commandes.php">
+                        <img src="Layout/Images/commandes.png" alt="">
+                        Les commandes
                     </a>
                 </li>
                 <li>
@@ -160,7 +166,7 @@
                     </a> 
                 </li>
                 <li>
-                    <a href="Add_categories.php">
+                    <a href="categories.php?do=add">
                         <img src="Layout/Images/categorize.png" alt="">
                         Catégories
                     </a>
