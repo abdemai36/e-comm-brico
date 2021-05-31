@@ -500,7 +500,7 @@ table:first-child{
         vertical-align: inherit;
         font-size: 11px;
     }
-    .table tbody tr td{
+    .table tbody tr .th-ellipsis{
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;

@@ -4,7 +4,9 @@
 ?>
 
         <!--Main start-->
-            hello main
+        <div class="head-marque">
+            <h1 class="text-center title-h">les statistices</h1>
+        </div>
 
         <!--Main End-->
 

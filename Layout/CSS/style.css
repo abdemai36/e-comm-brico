@@ -1,0 +1,163 @@
+:root{
+    --main-Color:#F9D96E;
+}
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+ul{
+    list-style-type: none;
+    padding: 0%;
+}
+
+/**************************************************************************/
+/************************* Start Container ********************************/
+/**************************************************************************/
+
+.container-Grid{
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "NavBar NavBar"
+    "SousSidBar SousSidBar"
+    "SidBar Main"
+    ".      Main"
+    "Footer Footer"
+    ;
+}
+
+
+
+
+
+
+/************************* Start NavBar */
+
+.NavBar{
+    grid-area: NavBar;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "brand List-Navbar";
+    align-items: center;
+    justify-content: space-between;
+}
+.NavBar .brand{
+    height: 100%;
+    grid-area: brand;
+}
+.btn{
+    background: none;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    font-weight: bold;
+    border:1px solid var(--main-Color);
+    color: var(--main-Color);
+    position: relative;
+    overflow: hidden;
+    height: 47px;
+    transition: all 0.5s;
+}
+.btn:hover{
+    color: #000;
+}
+.btn::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--main-Color);
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+    transition: all 0.5s;
+}
+.btn:hover::before{
+    height: 100%;
+}
+.txt-search{
+    border:1px solid var(--main-Color);
+    padding: 8px 18px;
+    margin-top: -6px;
+    width: 400px;
+}
+.NavBar .brand span{
+    height: 45px;
+    display: block;
+    line-height: 45px;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 23px 30px;
+    cursor: pointer;
+}
+.List-Navbar{
+    grid-area: List-Navbar;
+}
+.List-Navbar ul{
+    margin: 5px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    
+}
+.List-Navbar ul li{
+    display: inline-block;
+    margin: 23px 10px;
+}
+.fas{
+    font-size: 29px;
+    transition: color .5s;
+    cursor: pointer;
+}
+.fas:hover{
+    color: var(--main-Color);
+}
+/************************* End NavBar */
+
+
+/************************* Start SousSidBar */
+
+.SousSidBar{
+    grid-area: SousSidBar;
+    background-color:crimson;
+}
+/************************* End SousSidBar */
+
+
+
+/************************* Start SidBar */
+.SidBar{
+    grid-area: SidBar;
+    background-color: burlywood;
+    height: 500px;
+}
+
+/************************* End SidBar */
+
+
+
+/************************* Start Main */
+.Main{
+    grid-area: Main;
+    background-color: #eee;
+    height: 100vh;
+}
+/************************* End Main */
+
+
+
+/************************* Start Footer */
+.Footer{
+    grid-area: Footer;
+    background-color: cornflowerblue;
+}
+
+/************************* End Footer */
+
+/**************************************************************************/
+/************************* End Container ********************************/
+/**************************************************************************/

@@ -13,15 +13,20 @@
 
             $result=mysqli_query($conx,$query);
             $rw=mysqli_fetch_array($result);
-            if($rw>0){
+            if($rw>0)
+            {
                     $_SESSION['username']=$username;
                     $_SESSION['id_user']=$rw['ID_user'];
-                    header('location: Index.php');
+                    header('location:Index.php');
+                    
                     exit();
-            }else{
+            }else
+            {
                 echo "<div class='alert-danger'>Nom ou bien mot de passe est incorrect !</div>";
             }
-        }else{
+
+        }else
+        {
             echo "<div class='alert-danger'>SVP saisir tous les information !</div>";
         }
     }
@@ -54,11 +59,13 @@
                 <a href="#" class="form-check-label">j'ai oublie mot de passe ?</a>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">valider</button>
+            
             <br>
             <center>
                 <a href="SignUp.php" class="pasCompte">Pas de Compte ?</a>
             </center>
         </form>
+        
     </div>
 </body>
 </html>

@@ -15,9 +15,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
     <link href="Layout/CSS/StyleSite.css" rel="stylesheet"/>
-    <!--Image Zoom-->
-    <link type="text/css" rel="stylesheet" href="magiczoomplus/magiczoomplus.css"/>
-    <script type="text/javascript" src="magiczoomplus/magiczoomplus.js"></script>
 </head>
 <body>
     <div class="container-grid">
@@ -84,7 +81,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Marque.php">
+                    <a href="Index.php">
+                        <img src="Layout/Images/statistics.png" alt="">
+                        statistics
+                    </a>
+                </li>
+                <li>
+                    <a href="marques.php?do=add">
                         <img src="Layout/Images/marque.png" alt="">
                         Marques
                     </a>
@@ -102,15 +105,9 @@
                     </a> 
                 </li>
                 <li>
-                    <a href="Add_categories.php">
+                    <a href="categories.php?do=add">
                         <img src="Layout/Images/categorize.png" alt="">
                         Catégories
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Layout/Images/statistics.png" alt="">
-                        statistics
                     </a>
                 </li>
                 <li>

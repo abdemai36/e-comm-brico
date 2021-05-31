@@ -31,13 +31,13 @@
                 <div class="table-responsive">
                         <table class="table mt-3 table-bordered table-responsive table-hover">
                                 <tr>
-                                    <th>ID admin</th>
-                                    <th>Nom complet</th>
-                                    <th>E-mail</th>
-                                    <th>Adresse</th>
-                                    <th>Téléphone</th>
-                                    <th>Mot de passe</th>
-                                    <th>contrôle</th>
+                                    <th class="th-ellipsis">ID admin</th>
+                                    <th class="th-ellipsis">Nom complet</th>
+                                    <th class="th-ellipsis">E-mail</th>
+                                    <th class="th-ellipsis">Adresse</th>
+                                    <th class="th-ellipsis">Téléphone</th>
+                                    <th class="th-ellipsis">Mot de passe</th>
+                                    <th >contrôle</th>
                                 </tr>
                                 <?php 
                                     while($ro=mysqli_fetch_array($result)){
