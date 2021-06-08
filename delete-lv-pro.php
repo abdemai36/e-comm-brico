@@ -9,4 +9,12 @@
             }
         }
     }
+    
 
+    if(isset($_POST['del_id_shop'])){
+        foreach($_SESSION['card-shop'] as $key => $value){
+            if($value['product_id']==$_POST['del_id_shop']){
+                unset($_SESSION['card-shop'][$key]);
+            }
+        }
+    }

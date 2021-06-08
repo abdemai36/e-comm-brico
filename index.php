@@ -179,11 +179,7 @@ ob_start();
                         {?> 
                         <h3 class='h3-categ'><span><?php echo $res[$i];?></span></h3>
                             <div class="wrraper-product">
-                                
-                                
-
-                                <div class="slider-product">
-                                    
+                                <div class="slider-product"> 
                                 <?php
                             /**content slid product */
                             $query1="SELECT * FROM  product_tb p WHERE Categorie = $ro[1]";
@@ -194,7 +190,9 @@ ob_start();
                                     {?>
                                     
                                         <div class="produit">
+                                            <form action="lovely_page.php" method='GET'>
                                             <?php
+                                                $id=$row1['ID_Product'];
                                                 $res=$row1['Image'];
                                                 $res=explode(" ",$res);
                                                 $count=count($res)-1;
@@ -204,8 +202,17 @@ ob_start();
                                             ?>
 
                                                 <hr style="color:#ffc400;  width:100%;">
-                                                <div class="icon-heart"><img src="Layout/Images/heart.png" alt=""></div>
-                                                <div class="icon-add-produit"><img src="Layout/Images/add_shopping.png" alt=""></div>
+                                                <div class="icon-heart">
+                                                    <a href="lovely_page.php?do=prefer&i=<?php echo $id ?>">
+                                                        <img src="Layout/Images/heart.png" alt="">
+                                                    </a>
+                                                </div>
+
+                                                <div class="icon-add-produit">
+                                                    <a href="lovely_page.php?do=add-card&i=<?php echo $id ?>">
+                                                        <img src="Layout/Images/add_shopping.png" alt="">
+                                                    </a>
+                                                </div>
                                                 <h6 class="title-produit"><?php echo $row1['Name_P'];?></h6>
                                                 <div class="starts-icon">
                                                     <i class="fas fa-star"></i>
@@ -218,6 +225,7 @@ ob_start();
                                                     <span class="new-price"><?php echo $row1['Price'];?> dh</span>
                                                     <span class="old-price"><?php echo $row1['Pric_old'];?> dh</span>
                                                 </div>
+                                            </form>
                                         </div>
                                     
                                     <?php }

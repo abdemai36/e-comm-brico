@@ -55,12 +55,13 @@ ul{
     border-radius: 6px 6px 0 0;
 }
 .body-details{
-    height: 140px;
+    height: 48px;
     background-color: #eeeeee8c;
     margin-bottom: 15px;
     margin-top: -8px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .input-qeuntity{
     width: 30px;
@@ -341,11 +342,17 @@ ul{
     height: 21px;
     margin: 10px;
 }
-.title-produit a{
+.title-produit{
     font-size: 16px;
     margin-top: 22px;
     text-decoration: none;
     color: black;
+    min-height: 66px;
+    width: 100%;
+    padding: 0 5px;
+}
+.starts-icon{  
+    padding: 0 5px;
 }
 .starts-icon >i{
     font-size: 15px;

@@ -19,11 +19,12 @@
             if(isset($_SESSION['card']))
             {
                 $item_array_id=array_column($_SESSION['card'],'product_iD');
-                print_r($item_array_id);
+
                 if(in_array($_GET['i'],$item_array_id))
                 {
-                    echo "<script>alert('Ce produit déjà existé dans votre list préféré')</script>";
-                    echo "<script>window.location='index.php?page=1'</script>";
+                    // echo "<script>alert('Ce produit déjà existé dans votre list préféré')</script>";
+                    // echo "<script>window.location='index.php?page=1'</script>";
+                    header('Location: ' . $_SERVER['PHP_SELF']);
                 }else
                 {
                     $count=count($_SESSION['card']);
@@ -31,7 +32,7 @@
                         'product_iD'=>$_GET['i']
                     );
                     $_SESSION['card'][$count]=$item_array;
-                    header('location:index.php?page=1');
+                    header('Location: ' . $_SERVER['PHP_SELF']);
                     exit();
                 }
             }else
@@ -40,7 +41,7 @@
                     'product_iD'=>$_GET['i']
                 );
                 $_SESSION['card'][0]=$item_array;
-                header('location:index.php?page=1');
+                header('Location: ' . $_SERVER['PHP_SELF']);
                     exit();
             }
 

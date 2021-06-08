@@ -69,6 +69,7 @@ $(document).ready(function(){
         }
     });
 
+    /************delete product the card heard */
     $('.btn-delete').click(function(){
         var del_id=$(this).data('id');
         $.ajax({
@@ -78,6 +79,22 @@ $(document).ready(function(){
             datatype:"text",
             success:function(data){
                 $('#content-model-prod'+del_id).hide("slow");
+                
+            }
+
+        })
+    })
+
+    /************delete product the card shopp */
+    $('.btn-delete-shop').click(function(){
+        var del_id_shop=$(this).data('id');
+        $.ajax({
+            method:"POST",
+            url:"delete-lv-pro.php",
+            data:{del_id_shop:del_id_shop},
+            datatype:"text",
+            success:function(data){
+                $('#content-model-prod-shop'+del_id_shop).hide("slow");
                 
             }
 
