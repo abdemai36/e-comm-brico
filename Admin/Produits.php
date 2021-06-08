@@ -387,7 +387,7 @@
 
                         <div class="image" id="imgContainer">
                             <!-- <div id="lens"></div> -->
-                            <?php
+                                <?php
                                     $res=$row[7];
                                     $res=explode(" ",$res);
                                     $count=count($res)-1;
@@ -504,7 +504,7 @@
                         if(!in_array($Image_P_Extansion,$Image_P_Allow_Extansion))
                         {
                             echo "<div class='alert-danger'>S'il vous plait saisir seulement des image (png | jpg | jpeg | gif) </div>";
-                            header("refresh:2;url='Produits.php?do=manage'");
+                            header("refresh:2;url='Produits.php?do=Edit'");
                         }else
                         {
                             $query="UPDATE product_tb SET `Reference`='$ref',Name_P='$name_P',Price='$price',Pric_old='$price_old',Marque='$id_Marque',

@@ -142,13 +142,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../index.php">
                         <img src="Layout/Images/go_to.png" alt="">
                         Allez à site
                     </a>
                 </li>
                 <li>
-                    <a href="Marque.php">
+                    <a href="Index.php">
+                        <img src="Layout/Images/statistics.png" alt="">
+                        statistics
+                    </a>
+                </li>
+                <li>
+                    <a href="commandes.php">
+                        <img src="Layout/Images/commandes.png" alt="">
+                        Les commandes
+                    </a>
+                </li>
+                <li>
+                    <a href="marques.php?do=add">
                         <img src="Layout/Images/marque.png" alt="">
                         Marques
                     </a>
@@ -169,12 +181,6 @@
                     <a href="categories.php?do=add">
                         <img src="Layout/Images/categorize.png" alt="">
                         Catégories
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="Layout/Images/statistics.png" alt="">
-                        statistics
                     </a>
                 </li>
                 <li>
