@@ -30,6 +30,101 @@ ul{
     "Footer Footer"
     ;
 }
+/*************************************Start Card product */
+.Card{
+    box-shadow: 0px 0px 40px -15px #eee;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+.Card-images{
+    width: 53%;
+    min-height: 568px;
+
+}
+.Card-images .Big-img{
+    width: 100%;
+}
+.Card-images .small-imgs img{
+    width: 90px;
+    height: 90px;
+}
+.Card-body{
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.Card-body h2{
+    min-height: 64px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+.Card-body span{
+    padding-left: 20px;
+    display: inline-block;
+}
+.Card-body .ref{
+    color: rgb(172, 167, 167);
+}
+.Card-body .Prices{
+    display: flex;
+    justify-content: space-around;
+}
+.Card-body .Prices span:nth-child(1){
+    font-weight:bold; 
+    font-size:22px;
+    color: rgb(61, 236, 61);
+}
+.Card-body .Prices span:nth-child(2){
+    text-decoration-line: line-through;
+
+    font-size:14px;
+    color: rgb(245, 215, 48);
+}
+.Card-body .controls-qeuntity{
+    flex-basis: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.Card-body .contactes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+.Card-body .contactes .wtsp{
+    font-size: 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+.Card-body .contactes .wtsp:hover{
+    color: #25D366;
+}
+.Card-body .contactes .fb{
+    font-size: 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+.Card-body .contactes .fb:hover{
+    color: #3b5998;
+}
+.Card-body .contactes .insta{
+    font-size: 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+.Card-body .contactes .insta:hover{
+    color: #c13584;
+}
+
+/*************************************End Card product */
+
 
 /*************************************Start model bootstrap */
 .content-model-product{
@@ -281,7 +376,7 @@ ul{
     justify-content: center;
     grid-gap: 8px;
     grid-row-gap: 20px; */
-    min-height: 100vh;
+    min-height: 110vh;
     width: 100%;
     margin: 0 auto;
 }

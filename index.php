@@ -2,8 +2,6 @@
 ob_start();
     include_once('Includes/Templates/connection.php');
     include_once('Includes/Templates/header.php');
-    
-
 ?>
 
  <!--Start  Main -->
@@ -111,8 +109,9 @@ ob_start();
                                     <img src="Layout/Images/add_shopping.png" alt="">
                                 </a>
                             </div>
-
-                            <h6 class="title-produit"><?php echo $row['Name_P'];?></h6>
+                            <a href="view_ly_Pr.php?id=<?php echo $id?>" style="text-decoration:none; color:#000;">
+                                <h6 class="title-produit"><?php echo $row['Name_P'];?></h6>
+                            </a>
                             <div class="starts-icon">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -213,7 +212,10 @@ ob_start();
                                                         <img src="Layout/Images/add_shopping.png" alt="">
                                                     </a>
                                                 </div>
-                                                <h6 class="title-produit"><?php echo $row1['Name_P'];?></h6>
+                                                <a href="view_ly_Pr.php?id=<?php echo $id?>" style="text-decoration:none; color:#000;">
+                                                    <h6 class="title-produit"><?php echo $row1['Name_P'];?></h6>
+                                                </a>
+                                                
                                                 <div class="starts-icon">
                                                     <i class="fas fa-star"></i>
                                                     <i class="fas fa-star"></i>
