@@ -59,7 +59,7 @@ ul{
     
 }
 .Card-body h2{
-    min-height: 64px;
+    height: auto;
     padding: 12px;
     border-bottom: 1px solid #eee;
 }
@@ -77,13 +77,13 @@ ul{
 .Card-body .Prices span:nth-child(1){
     font-weight:bold; 
     font-size:22px;
-    color: rgb(61, 236, 61);
+    color: var(--main-Color);
 }
 .Card-body .Prices span:nth-child(2){
     text-decoration-line: line-through;
 
     font-size:14px;
-    color: rgb(245, 215, 48);
+    color: var(--main-Color);
 }
 .Card-body .controls-qeuntity{
     flex-basis: 200px;
