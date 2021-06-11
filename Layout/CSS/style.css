@@ -42,7 +42,7 @@ ul{
 }
 .Card-images{
     width: 53%;
-    min-height: 568px;
+    height: 568px;
 
 }
 .Card-images .Big-img{
@@ -121,8 +121,48 @@ ul{
 }
 .Card-body .contactes .insta:hover{
     color: #c13584;
+}.Section
+
+.controls-qeuntity .btn-buy{
+    background-color: var(--main-Color);
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--main-Color);
+    font-weight: 600;
+    transition: all .5s;
+}
+.controls-qeuntity .btn-buy:hover {
+    background-color: transparent;
+}
+.controls-qeuntity input[type="number"]{
+    border-radius: 12px;
+    padding: 5px 10px;
+    border: 1px solid var(--main-Color);
 }
 
+.description .titel-description{
+    text-align: center;
+    padding: 15px;
+    margin: 227px auto 0px;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-bottom: 2px solid var(--main-Color);
+}
+.description-body div,.description-body p{
+    padding: 26px 0 26px 8px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    width: 94%;
+    margin: 10px auto;
+}
+.description-body .sp-descrip-categ, .sp-descrip-marque{
+    font-weight: 700;
+    color: #686c6f;
+}
+.controls-qeuntity .btn-buy .fa-shopping-basket{
+    font-size: 18px;
+    margin-right: 7px;
+}
 /*************************************End Card product */
 
 
@@ -437,7 +477,7 @@ ul{
     height: 21px;
     margin: 10px;
 }
-.title-produit{
+.title-produit a{
     font-size: 16px;
     margin-top: 22px;
     text-decoration: none;
@@ -688,7 +728,6 @@ ul{
 
 @media (max-width:767px){ /*Mobile tablet screen*/
     .container-Grid{
-
         display: grid;
         /* grid-gap: 10px; */
         grid-template-columns: 1fr 4fr;
@@ -708,6 +747,41 @@ ul{
     .produit{
         width: 47%;
     }
+
+    /*********************************Start page Card responsive********************************/
+    .Card{
+            flex-direction: column;
+    }
+    .Card-images{
+        width: 100%;
+        height: auto;
+    }
+    .Card-body{
+        width: 100%;
+        height: auto;
+    }
+    .Card-body .controls-qeuntity{
+        flex-basis: 70px;
+    }
+    .controls-qeuntity .btn-buy{
+        font-size: 14px;
+        padding: 5px 15px;
+
+    }
+    .controls-qeuntity input[type="number"]{
+        border-radius: 12px;
+        width: 111px;
+        padding: 5px 15px;
+    }
+    .Card-body .contactes{
+        flex-basis: 71px;
+    }
+    .description .titel-description{
+        margin: 31px auto 0px;
+    }
+    /*********************************End page Card responsive********************************/
+
+
     /*********************************Start page SidBar responsive********************************/
 
     /*********************************End page SidBar responsive********************************/
@@ -748,6 +822,12 @@ ul{
     }
     .produit{
         width: 32%;
+    }
+    .controls-qeuntity input[type="number"]{
+        width: 122px; 
+    }
+    .controls-qeuntity input[type="number"]:focus{
+        outline: none;
     }
     /*********************************End page SidBar responsive********************************/
 

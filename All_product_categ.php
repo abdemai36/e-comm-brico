@@ -1,4 +1,5 @@
 <?php
+        ob_start();
         include_once('Includes/Templates/connection.php');
         include_once('Includes/Templates/header.php');
         include_once('Includes/Templates/SidBar.php');
@@ -383,4 +384,5 @@
 
 <?php
     include_once('Includes/Templates/footer.php');
+    ob_end_flush();
 ?>

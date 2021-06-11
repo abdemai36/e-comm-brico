@@ -242,7 +242,9 @@
                 </button>
                 </li>
                 <li>
-                    <a><i class="fas fa-user fa-2x"></i></a>
+                    <a href="Login.php">
+                        <i class="fas fa-user fa-2x"></i>
+                    </a>
                 </li>
                 <li>
                     <a><i class="fas fa-bell fa-2x"></i></a>

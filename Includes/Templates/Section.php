@@ -19,9 +19,6 @@
                         {?> 
                         <h3 class='h3-categ'><span><?php echo $res[$i];?></span></h3>
                             <div class="wrraper-product">
-                                
-
-
                                 <div class="slider-product">
                                     <form action="">
                         <?php
