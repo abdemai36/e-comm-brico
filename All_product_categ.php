@@ -328,17 +328,19 @@
                                             <img src="Layout/Images/add_shopping.png" alt="">
                                         </a>
                                     </div>
-                                <?php echo "<h6 class='title-produit'>".$row['Name_P']."</h6>";
-                                
-                                    echo "<div class='starts-icon'>";
+                                    <a href="view_ly_Pr.php?id=<?php echo $id?>" style="text-decoration:none; color:#000;">
+                                        <h6 class='title-produit'><?php echo $row['Name_P']?></h6>
+                                    </a>
+                                    <?php  echo "<div class='starts-icon'>";
                                     echo "<i class='fas fa-star'></i>";
                                     echo "<i class='fas fa-star'></i>";
                                     echo "<i class='fas fa-star'></i>";
                                     echo "<i class='fas fa-star'></i>";
                                     echo "<i class='fas fa-star'></i>";
                                 echo "</div>";
-                                echo "<div class='price'>";
-                                    echo "<h6><span class='new-price'>".$row['Price'] ."dh</span></h6>";?>
+                                echo "<div class='price'>";?>
+                                    
+                                        <h6><span class='new-price'><?php echo $row['Price']?>dh</span></h6>
                                     <?php
                                     if($row['Pric_old']<=0){
                                         echo "<span class='old-price'></span>";

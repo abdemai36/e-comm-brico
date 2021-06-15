@@ -27,9 +27,96 @@ ul{
     "SidBar Main"
     "SidBar Main"
     "SidBar Section"
+    "Commander Commander"
     "Footer Footer"
     ;
 }
+
+
+/*************************************Start Command */
+
+.Commander{
+    grid-area: Commander;
+    width: 100%;
+    height: 100vh;
+}
+.Commander .titel-commande{
+    border-bottom: 2px solid var(--main-Color);
+    text-align: center;
+    margin: 10px auto 40px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.Commander .command-body{
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+}
+.command-body .form-command{
+    width: 60%;
+    padding: 20px;
+}
+
+.command-body .form-command .form-control{
+    border: 2px solid var(--main-Color) !important;
+    outline: none;
+}
+.command-body .form-command .form-control:focus{
+    border: 2px solid var(--main-Color) !important;
+    box-shadow: 0 0 6px 1px var(--main-Color);
+    outline: none;
+}
+.command-body .form-command .input-group-text{
+    background: var(--main-Color);
+    color: black;
+    font-weight: 600;
+    border: 1px solid var(--main-Color);
+}
+.btn-primary{
+    transition: all .5s;
+    color: black !important;
+}
+.btn-primary:hover{
+    background-color: var(--main-Color);
+    color: black;
+    border: 1px solid var(--main-Color);
+}
+
+.command-body .your-command{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.command-body .your-command .content-details{
+    background-color: blue;
+}
+.command-body .your-command .content-details img {
+    width: 90px;
+}
+.body-details-command{
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    max-height:365px ;
+    overflow: auto;
+}
+.details-command{
+    display: flex;
+    margin: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.details-command img{
+    width: 90px;
+    margin: 0 18px 9px 0;
+}
+.total-pric-command{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/*************************************End  Commmand */
+
 /*************************************Start Card product */
 .Card{
     box-shadow: 0px 0px 40px -15px #eee;
@@ -735,6 +822,7 @@ ul{
         "NavBar NavBar"
         "Main Main"
         "Section Section"
+        "Commander Commander"
         "Footer Footer"
         ;
     }
@@ -780,7 +868,15 @@ ul{
         margin: 31px auto 0px;
     }
     /*********************************End page Card responsive********************************/
-
+    .command-body{
+        flex-direction: column-reverse;
+    }
+    .command-body .your-command{
+        width: 100%;
+    }
+    .command-body .form-command{
+        width: 100%;
+    }
 
     /*********************************Start page SidBar responsive********************************/
 
@@ -812,9 +908,11 @@ ul{
         "NavBar NavBar"
         "Main Main"
         "Section Section"
+        "Commander Commander"
         "Footer Footer"
         ;
     }
+    
     /*********************************Start page SidBar responsive********************************/
 
     .SidBar{
@@ -830,7 +928,15 @@ ul{
         outline: none;
     }
     /*********************************End page SidBar responsive********************************/
-
+    .command-body{
+        flex-direction: column-reverse;
+    }
+    .command-body .your-command{
+        width: 100%;
+    }
+    .command-body .form-command{
+        width: 100%;
+    }
 
 
 
@@ -861,6 +967,7 @@ ul{
         "NavBar NavBar"
         "Main Main"
         "Section Section"
+        "Commander Commander"
         "Footer Footer"
         ;
     }
@@ -868,6 +975,15 @@ ul{
     width: 23%;
 }
 
+.command-body{
+    flex-direction: row;
+}
+.command-body .your-command{
+    width: 40%;
+}
+.command-body .form-command{
+    width: 60%;
+}
 
     /*********************************End page SidBar responsive********************************/
 }
@@ -884,6 +1000,7 @@ ul{
     "SidBar Main"
     "SidBar Main"
     "SidBar Section"
+    "Commander Commander"
     "Footer Footer"
     ;
 }
@@ -896,8 +1013,15 @@ ul{
     width: 19%;
 }
     /*********************************End page SidBar responsive********************************/
-
-
+    .command-body{
+        flex-direction: row;
+    }
+    .command-body .your-command{
+        width: 40%;
+    }
+    .command-body .form-command{
+        width: 60%;
+    }
 
     /*********************************Start page Main responsive********************************/
 
