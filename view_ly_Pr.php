@@ -71,12 +71,12 @@ ob_start();
                             
                             <div class="controls-qeuntity">
                                 <input type="number" value="1" min="1" max="1000" name="quantity" required>
-                                <button  type="submit" name="submit" class="btn-buy"><i class="fas fa-shopping-basket"></i>Commandez maintenant</button>
+                                <button  type="submit" name="submit" class="btn-buy-prod"><i class="fas fa-shopping-basket"></i>Commandez maintenant</button>
                             </div>
                             <div class="contactes">
-                                <i class="fab fa-whatsapp-square wtsp"></i>
-                                <i class="fab fa-facebook-square fb"></i>
-                                <i class="fab fa-instagram insta"></i>
+                                <a href="http://wa.me/+212676390122" target="_blank" style="color:#000;"><i class="fab fa-whatsapp-square wtsp"></i></a>
+                                <a href="http://www.facebook.com/Brico-Bakir-2088765571360692" target="_blank" style="color:#000;"><i class="fab fa-facebook-square fb"></i></a>
+                                <a href="https://www.instagram.com/brico_bakir/?utm_medium=copy_link" target="_blank" style="color:#000;"><i class="fab fa-instagram insta"></i></a>
                             </div>
                         </div>
                     

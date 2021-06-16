@@ -8,6 +8,27 @@ $(document).ready(function(){
             }
         });
 
+        function sendEmail(){
+            var name=$(".f-name");
+            var email=$('.email');
+            //var phone=$('.tel');
+
+            $.ajax({
+                url:"contact.php",
+                method:"POST",
+                dataType:"json",
+                data:{
+                    name:name.val(),
+                    email:email.val(),
+                },
+                success:function(response){
+                    $('#from-send')[0].reset();
+                    $('.notification-send').text("message sent seccessfult");
+                }
+
+            })
+        }
+
         $('#backTop').click(function(){
             $('html , body').animate({scrollTop:0},800);
             console.log('cc');

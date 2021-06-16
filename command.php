@@ -12,34 +12,35 @@ ob_start();
                 <h1 class="titel-commande">Commander</h1>
                 <div class="command-body">
                     <div class="form-command">
+                        <h3 class="notification-send"></h3>
                         <!--Start form-->
-                        <form class="row g-3" action="contact.php" method="POST">
+                        <form class="row g-3" action="" method="" id="from-send">
                             <input type="hidden" value=<?php echo $quantity;?> name="quantity" >
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Nom <span style="color:red;">*</span></label>
-                                <input type="text" class="form-control" id="validationDefault01" name="l-name" required>
+                                <input type="text" class="form-control l-name" id="validationDefault01" name="l-name" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="validationDefault02" class="form-label">Prénom <span style="color:red;">*</span></label>
-                                <input type="text" class="form-control" id="validationDefault02" name='f-name' required>
+                                <input type="text" class="form-control f-name" id="validationDefault02" name='f-name' required>
                             </div>
                             <div class="col-md-6">
                                 <label for="validationDefaultUsername" class="form-label">Adresse email <span style="color:red;">*</span></label>
                                 <div class="input-group">
                                 <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                                <input type="email" class="form-control" id="validationDefaultUsername" name="email"  aria-describedby="inputGroupPrepend2" required>
+                                <input type="email" class="form-control email" id="validationDefaultUsername" name="email"  aria-describedby="inputGroupPrepend2" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="validationDefault05" class="form-label">Téléphone <span style="color:red;">*</span></label>
-                                <input type="tel" class="form-control" id="validationDefault05"name="phone" required>
+                                <input type="tel" class="form-control phone" id="validationDefault05"name="phone" required>
                             </div>
                             <div class="col-md-12">
                                 <label for="validationDefault03" class="form-label">Adresse et Ville <span style="color:red;">*</span></label>
-                                <input type="text" class="form-control" name="city" id="validationDefault03" required>
+                                <input type="text" class="form-control city" name="city" id="validationDefault03" required>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary" type="submit" name="submit">Commander</button>
+                                <button class="btn btn-primary" type="submit" onclick="sendEmail()" name="submit">Commander</button>
                             </div>
                         
                         </form>  

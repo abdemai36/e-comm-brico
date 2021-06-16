@@ -233,19 +233,9 @@ ul{
 }
 .Card-body .contactes .insta:hover{
     color: #c13584;
-}.Section
+}
 
-.btn-buy{
-    background-color: var(--main-Color);
-    padding: 10px 20px;
-    border-radius: 12px;
-    border: 1px solid var(--main-Color);
-    font-weight: 600;
-    transition: all .5s;
-}
-.btn-buy:hover {
-    background-color: transparent;
-}
+
 .controls-qeuntity input[type="number"]{
     border-radius: 12px;
     padding: 5px 10px;
@@ -271,9 +261,21 @@ ul{
     font-weight: 700;
     color: #686c6f;
 }
-.controls-qeuntity .btn-buy .fa-shopping-basket{
+.controls-qeuntity .btn-buy-prod .fa-shopping-basket{
     font-size: 18px;
     margin-right: 7px;
+}
+.btn-buy-prod{
+    font-size: 14px;
+    background-color: var(--main-Color);
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--main-Color);
+    font-weight: 600;
+    transition: all .5s;
+}
+.btn-buy-prod:hover {
+    background-color: transparent;
 }
 /*************************************End Card product */
 
@@ -963,11 +965,7 @@ right: -10px;
     .Card-body .controls-qeuntity{
         flex-basis: 70px;
     }
-    .controls-qeuntity .btn-buy{
-        font-size: 14px;
-        padding: 5px 15px;
-
-    }
+ 
     .controls-qeuntity input[type="number"]{
         border-radius: 12px;
         width: 111px;
