@@ -71,7 +71,7 @@ ob_start();
                             
                             <div class="controls-qeuntity">
                                 <input type="number" value="1" min="1" max="1000" name="quantity" required>
-                                <button type="submit" name="submit" class="btn-buy"><i class="fas fa-shopping-basket"></i>Commandez maintenant</button>
+                                <button  type="submit" name="submit" class="btn-buy"><i class="fas fa-shopping-basket"></i>Commandez maintenant</button>
                             </div>
                             <div class="contactes">
                                 <i class="fab fa-whatsapp-square wtsp"></i>

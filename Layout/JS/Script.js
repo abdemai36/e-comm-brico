@@ -1,6 +1,17 @@
 $(document).ready(function(){
-    
-        
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 40){
+                $('#backTop').fadeIn();
+            }else{
+                $('#backTop').fadeOut();
+            }
+        });
+
+        $('#backTop').click(function(){
+            $('html , body').animate({scrollTop:0},800);
+            console.log('cc');
+        });
     // filter_data();
     // function filter_data(){
     //     $('.rows').html('<div id="loading" style=""></div>');

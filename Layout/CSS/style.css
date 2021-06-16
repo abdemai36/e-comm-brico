@@ -11,8 +11,32 @@ ul{
     padding: 0%;
 }
 
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--main-Color);
+    border-radius: 6px;
+}
 
-
+#backTop{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10000;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--main-Color);
+    opacity: .5;
+    display: none;
+}
+#backTop:hover{
+    opacity: 1;
+}
+#backTop .top:hover{
+    color: #000;
+}
 /**************************************************************************/
 /************************* Start Container ********************************/
 /**************************************************************************/
@@ -28,6 +52,7 @@ ul{
     "SidBar Main"
     "SidBar Section"
     "Commander Commander"
+    ". section_marque"
     "Footer Footer"
     ;
 }
@@ -210,7 +235,7 @@ ul{
     color: #c13584;
 }.Section
 
-.controls-qeuntity .btn-buy{
+.btn-buy{
     background-color: var(--main-Color);
     padding: 10px 20px;
     border-radius: 12px;
@@ -218,7 +243,7 @@ ul{
     font-weight: 600;
     transition: all .5s;
 }
-.controls-qeuntity .btn-buy:hover {
+.btn-buy:hover {
     background-color: transparent;
 }
 .controls-qeuntity input[type="number"]{
@@ -344,11 +369,9 @@ ul{
 
 .NavBar{
     grid-area: NavBar;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: "brand List-Navbar";
-    align-items: center;
-    justify-content: space-between;
+}
+.nav-icons li {
+margin: 0 8px 0 8px;
 }
 .NavBar .brand{
     height: 100%;
@@ -370,6 +393,7 @@ ul{
 .btn-nav-lovely-add{
     background-color: transparent !important;
     border: none !important;
+    position: relative;
 }
 .btn:hover{
     color: #000;
@@ -436,6 +460,16 @@ ul{
 }
 .fas:hover{
     color: var(--main-Color);
+}
+
+
+.btn-nav-lovely-add .badge{
+    position: absolute;
+    top: -9px;
+right: -10px;
+}
+.btn-serch{
+    width: 200px;
 }
 /************************* End NavBar */
 
@@ -784,12 +818,21 @@ ul{
     background:url('loading.gif') ;
     height: 150px;
 }
-/************************* Carousel ************************************************************************/
+
+.marque{
+    width: 100%;
+    height: 100px;
+    background-color: #fb5656;
+    border: 1px solid #000 ;
+}
+/************************* Start section Marque ************************************************************************/
+.Section_marc{
+    grid-area: section_marque;
+}
 
 
 
-
-/************************* fin Carousel ************************************************************************/
+/************************* fin section Marque ************************************************************************/
 
 /************************* End Section */
 
@@ -797,10 +840,78 @@ ul{
 /************************* Start Footer */
 .Footer{
     grid-area: Footer;
-    background-color: darkblue;
-
+    background-color: #222;
+    color: white;
+    padding: 50px 100px 0px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-gap:8px ;
+}
+.Footer .aboutus{
+    width:45%;
+}
+.Footer .footr-wtsp,.footr-insta,.footr-fb{
+    font-size: 30px;
+    cursor: pointer;
+    padding: 8px;
+    background:#4A4847;
+}
+.Footer .footr-wtsp:hover{
+    background: var(--main-Color);
+    color: #fff;
+}
+.Footer .footr-fb:hover{
+    background: var(--main-Color);
+    color: #fff;
+}
+.Footer .footr-insta:hover{
+    background: var(--main-Color);
+    color: #fff;
 }
 
+.Footer .google-map{
+    width:400px;
+    height:450px;
+}
+.Footer .contactus h3{
+    position: relative;
+    padding-bottom: 10px;
+    font-variant: small-caps;
+}
+.Footer .contactus h3::before{
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 90px;
+    height: 2px;
+    background: var(--main-Color);
+  
+}
+.Footer .map h3{
+    position: relative;
+    padding-bottom: 10px;
+    font-variant: small-caps;
+}
+.Footer .map h3::before{
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 90px;
+    height: 2px;
+    background: var(--main-Color);
+  
+}
+.Footer .copyright{
+    width: 100%;
+    background-color:#363635;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+}
 /************************* End Footer */
 
 /**************************************************************************/
@@ -823,6 +934,7 @@ ul{
         "Main Main"
         "Section Section"
         "Commander Commander"
+        "section_marque section_marque"
         "Footer Footer"
         ;
     }
@@ -896,6 +1008,19 @@ ul{
 
 
     /*********************************End page Section responsive********************************/
+
+    /*********************************Start page footer responsive********************************/
+    .Footer{
+        padding: 10px;
+    }
+    .Footer .aboutus{
+        width: 100%;
+    }
+    .Footer .google-map{
+        width:100%;
+        height:450px;
+    }
+    /*********************************End page footer responsive********************************/
 }
 @media (min-width:768px){/*Small screen*/
 
@@ -909,6 +1034,7 @@ ul{
         "Main Main"
         "Section Section"
         "Commander Commander"
+        "section_marque section_marque"
         "Footer Footer"
         ;
     }
@@ -949,7 +1075,19 @@ ul{
 
     /*********************************Start page Section responsive********************************/
 
-    /*********************************End page Section responsive********************************/
+        /*********************************Start page footer responsive********************************/
+        .Footer{
+            padding: 30px;
+        }
+        .Footer .aboutus{
+            width: 100%;
+        }
+        .Footer .google-map{
+            width:100%;
+            height:450px;
+        }
+        /*********************************End page footer responsive********************************/
+
 
 }
 
@@ -968,24 +1106,38 @@ ul{
         "Main Main"
         "Section Section"
         "Commander Commander"
+        "section_marque section_marque"
         "Footer Footer"
         ;
     }
-.produit{
-    width: 23%;
-}
+    .produit{
+        width: 23%;
+    }
 
-.command-body{
-    flex-direction: row;
-}
-.command-body .your-command{
-    width: 40%;
-}
-.command-body .form-command{
-    width: 60%;
-}
+    .command-body{
+        flex-direction: row;
+    }
+    .command-body .your-command{
+        width: 40%;
+    }
+    .command-body .form-command{
+        width: 60%;
+    }
 
     /*********************************End page SidBar responsive********************************/
+
+    /*********************************Start page footer responsive********************************/
+    .Footer{
+        padding: 50px 100px 0px;
+    }
+    .Footer .aboutus{
+        width: 45%;
+    }
+    .Footer .google-map{
+        width:400px;
+        height:450px;
+    }
+    /*********************************End page footer responsive********************************/
 }
 
 @media (min-width:1200px){/*Larg screen*/
@@ -1001,6 +1153,7 @@ ul{
     "SidBar Main"
     "SidBar Section"
     "Commander Commander"
+    ". section_marque"
     "Footer Footer"
     ;
 }
@@ -1026,5 +1179,17 @@ ul{
     /*********************************Start page Main responsive********************************/
 
     /*********************************End page Main responsive********************************/
+    /*********************************Start page footer responsive********************************/
+    .Footer{
+        padding: 50px 100px 0px;
+    }
+    .Footer .aboutus{
+        width: 45%;
+    }
+    .Footer .google-map{
+        width:400px;
+        height:450px;
+    }
+    /*********************************End page footer responsive********************************/
 }
 

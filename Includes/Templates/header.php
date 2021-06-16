@@ -24,89 +24,89 @@
     <!--Start container-->
     <div class="container-Grid">
 
-        <!-- Modal -->
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Les produits préféres</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="model-details">
-                        <h5 class="header-details">Détails de prix</h5>
-                        <div class="body-details">
-                            <?php
-                            $total=0;
-                                if(isset($_SESSION['card'])){
-                                    $count=count($_SESSION['card']);
-                                    echo "<h6>Total Prix ($count Produits) </h6>";
-                                    $product_id=array_column($_SESSION['card'],'product_iD');
-                                    $qe="SELECT * FROM product_tb ORDER BY ID_Product DESC";
-                                    $re=mysqli_query($conx,$qe);
-                                    if($re){
-                                        while($row=mysqli_fetch_array($re))
-                                        {
-                                            foreach($product_id as $id)
+    <!-- Modal -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Les produits préféres</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="model-details">
+                            <h5 class="header-details">Détails de prix</h5>
+                            <div class="body-details">
+                                <?php
+                                $total=0;
+                                    if(isset($_SESSION['card'])){
+                                        $count=count($_SESSION['card']);
+                                        echo "<h6>Total Prix ($count Produits) </h6>";
+                                        $product_id=array_column($_SESSION['card'],'product_iD');
+                                        $qe="SELECT * FROM product_tb ORDER BY ID_Product DESC";
+                                        $re=mysqli_query($conx,$qe);
+                                        if($re){
+                                            while($row=mysqli_fetch_array($re))
                                             {
-                                                if($row['ID_Product']==$id)
+                                                foreach($product_id as $id)
                                                 {
-                                                    $total=$total+$row['Price'];
+                                                    if($row['ID_Product']==$id)
+                                                    {
+                                                        $total=$total+$row['Price'];
+                                                    }
                                                 }
                                             }
                                         }
+                                        
+                                        echo "<h6 style='color: #42d842;'>$total DH</h6>";
+                                    }else{
+                                        echo "<h6 style='color: #42d842;'>Total Prix (0 Produit) </h6>";
                                     }
-                                    
-                                    echo "<h6 style='color: #42d842;'>$total DH</h6>";
-                                }else{
-                                    echo "<h6 style='color: #42d842;'>Total Prix (0 Produit) </h6>";
-                                }
-                            ?>
-                            
+                                ?>
+                                
+                            </div>
                         </div>
-                    </div>
-                <?php
-                if(isset($_SESSION['card'])){
-                    $product_id=array_column($_SESSION['card'],'product_iD');
-                    $qe="SELECT * FROM product_tb ORDER BY ID_Product DESC";
-                    $re=mysqli_query($conx,$qe);
-                    if($re){
-                        while($row=mysqli_fetch_array($re)){
-                            $res=$row['Image'];
-                            $res=explode(" ",$res);
-                            $count=count($res)-1;
-                            foreach($product_id as $id){
-                                if($row['ID_Product']==$id)
-                                {?>
+                    <?php
+                    if(isset($_SESSION['card'])){
+                        $product_id=array_column($_SESSION['card'],'product_iD');
+                        $qe="SELECT * FROM product_tb ORDER BY ID_Product DESC";
+                        $re=mysqli_query($conx,$qe);
+                        if($re){
+                            while($row=mysqli_fetch_array($re)){
+                                $res=$row['Image'];
+                                $res=explode(" ",$res);
+                                $count=count($res)-1;
+                                foreach($product_id as $id){
+                                    if($row['ID_Product']==$id)
+                                    {?>
 
-                                    <div class="content-model-product" id="content-model-prod<?php echo $id;?>">
+                                        <div class="content-model-product" id="content-model-prod<?php echo $id;?>">
 
-                                    <?php 
-                                        for($i=0;$i<1;$i++){
+                                        <?php 
+                                            for($i=0;$i<1;$i++){
 
-                                            echo "<img ' src='Admin/avatar/$res[$i]'/>";
+                                                echo "<img ' src='Admin/avatar/$res[$i]'/>";
+                                                
+                                            }
+                                        ?>
                                             
-                                        }
-                                    ?>
-                                        
-                                        <div style="width: 100%;">
-                                            <h6><?php echo $row['Name_P']?></h6>
-                                            <small style="font-weight:bold; color: #42d842;"><?php echo $row['Price'] ?> dh</small>
+                                            <div style="width: 100%;">
+                                                <h6><?php echo $row['Name_P']?></h6>
+                                                <small style="font-weight:bold; color: #42d842;"><?php echo $row['Price'] ?> dh</small>
+                                            </div>
+                                            
+                                            <a data-id="<?php echo $id?>" class="icon-delete btn-delete" style="background-color: transparent; border:none;">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
                                         </div>
-                                        
-                                        <a data-id="<?php echo $id?>" class="icon-delete btn-delete" style="background-color: transparent; border:none;">
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                <?php }
+                                    <?php }
+                                }
                             }
                         }
+                        
+                    }else{
+                        echo "<h6>Votre List est Vide !</h6>";
                     }
-                    
-                }else{
-                    echo "<h6>Votre List est Vide !</h6>";
-                }
-            ?>
+                ?>
 
                 </div>
                 <div class="modal-footer">
@@ -118,8 +118,8 @@
         </div>
 
 
-            <!-- Modal add shop-->
-            <div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <!-- Modal add shop-->
+ <div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -210,68 +210,93 @@
                 </div>
             </div>
         </div>
-    <!--Start  Navbar -->
-    <div class="NavBar">
-        <div class="brand">
-                <span>Brico Bakir</span>
-        </div>
-        <div class="List-Navbar">
-            <ul>
-                <li>
-                    <input type="text" class="txt-search" placeholder="Rechercher">
-                    <button class='btn'>Rechercher</button>
-                </li>
 
-                <li>
-                <button data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn-nav-lovely-add">
-                    <a>
-                    <a><i class="fas fa-shopping-cart"></i></a>
-                        <?php
-                            if(isset($_SESSION['card-shop']))
-                            {
-                                $count=count($_SESSION['card-shop']);
-                                //if($count>=9){
-                                    echo "<span class='badge rounded-pill bg-danger badge-paniar'>$count</span>";
-                                //}
-                            }else
-                            {
-                                echo "<span class='badge rounded-pill bg-danger badge-paniar '>0</span>";
-                            }
-                        ?>
-                    </a>
+        <!--Start NavBar-->
+        <nav class="NavBar navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Brico Bakir</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
                 </button>
-                </li>
-                <li>
-                    <a href="Login.php">
-                        <i class="fas fa-user fa-2x"></i>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                    </li> -->
+                    <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
                     </a>
-                </li>
-                <li>
-                    <a><i class="fas fa-bell fa-2x"></i></a>
-                    <span class="badge rounded-pill bg-danger badge-paniar"></span>
-                </li>
-                <li>
-                <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-nav-lovely-add">
-                    <a href="">
-                        <a><i class="fas fa-heart fa-2x"></i></a>
-                        <?php
-                            if(isset($_SESSION['card']))
-                            {
-                                $count=count($_SESSION['card']);
-                                //if($count>=9){
-                                    echo "<span class='badge rounded-pill bg-danger badge-paniar prefer-count'>$count</span>";
-                                //}
-                            }else
-                            {
-                                echo "<span class='badge rounded-pill bg-danger badge-paniar prefer-count'>0</span>";
-                            }
-                        ?>
-                    </a>
-                </button>
-                </li>
-            </ul>
-        </div>
-    </div>
-        <!--End NavBar-->
-    
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li> -->
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-outline-success btn-serch" type="submit">Rechercher</button>
+                </form>
+                <ul class="navbar-nav nav-icons">
+                    <li class="nav-item">
+                        <a><i class="fas fa-bell fa-2x"></i></a>
+                        <span class="badge rounded-pill bg-danger badge-paniar"></span>
+                    </li>
+                    <li class="nav-item">
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn-nav-lovely-add">
+                            <a>
+                            <a><i class="fas fa-shopping-cart"></i></a>
+                                <?php
+                                    if(isset($_SESSION['card-shop']))
+                                    {
+                                        $count=count($_SESSION['card-shop']);
+                                        //if($count>=9){
+                                            echo "<span class='badge rounded-pill bg-danger badge-paniar'>$count</span>";
+                                        //}
+                                    }else
+                                    {
+                                        echo "<span class='badge rounded-pill bg-danger badge-paniar '>0</span>";
+                                    }
+                                ?>
+                            </a>
+                        </button>
+                    </li>
+                    <li>
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-nav-lovely-add">
+                            <a href="" >
+                                <a><i class="fas fa-heart fa-2x"></i></a>
+                                <?php
+                                    if(isset($_SESSION['card']))
+                                    {
+                                        $count=count($_SESSION['card']);
+                                        //if($count>=9){
+                                            echo "<span class='badge rounded-pill bg-danger badge-paniar prefer-count'>$count</span>";
+                                        //}
+                                    }else
+                                    {
+                                        echo "<span class='badge rounded-pill bg-danger badge-paniar prefer-count'>0</span>";
+                                    }
+                                ?>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Login.php">
+                            <i class="fas fa-user fa-2x" style="color:black;"></i>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
 
+        <!---Back top-->
+        <button id="backTop"><i class="fas fa-angle-up top"></i></button>
