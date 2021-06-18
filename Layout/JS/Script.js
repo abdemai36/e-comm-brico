@@ -133,9 +133,88 @@ $(document).ready(function(){
         })
     })
 
+
+    jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up" >+</div><div class="quantity-button quantity-down" >-</div></div>').insertAfter('.quantity input');
+    jQuery('.quantity').each(function() {
+      var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    });
+
+
+
+
+
+        // var iprice=$('.iprice');
+        // var QNT=$('.qnt');
+        // var total=$('.itotal');
+        // var res=0;
+        // for(var i=0;i<QNT.length;i++){
+        //     //res=QNT[i].val();
+        //     alert(iprice.val());
+        //     //total.text(res)=QNT
+        // }
+        // $(".iprice").each(function(){
+        //     var iprice=$('.iprice').val();
+        //     alert(iprice);
+            
+        // });
+        // $(".qnt").each(function(){
+        //     var qnt=$('.qnt').val();
+        //     //alert(iprice);
+        //     alert(qnt);
+        // });
+    
+
+
+
+
 })
 
+var gt=0
+var iprice =document.getElementsByClassName("iprice");
+var qnt =document.getElementsByClassName("qnt");
+var itotal =document.getElementsByClassName("itotal")[0];
+var Detail_qnt =document.getElementsByClassName("Detail-qnt");
 
+var res=0;
+function suTotal(){
+    gt=0;
+    for(var i=0;i<iprice.length;i++){
+        Detail_qnt[i].value=qnt[i].value;
+         res=(iprice[i].value * qnt[i].value);
+        gt=gt+(iprice[i].value * qnt[i].value);
+    }
+    itotal.innerHTML=gt;
+}
+
+suTotal();
 /***************************Tooltips*******************************/
 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

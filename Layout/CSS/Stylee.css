@@ -58,6 +58,149 @@ ul{
 }
 
 
+/*************************************Start  page Panair */
+.procudt-panair img{
+    width: 15%;
+    height: 100px;
+}
+.panier{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.procudt-panair{
+    display: flex;
+    justify-content:space-between ;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 68%;
+    max-height: 123px;
+}
+.body-product-panair{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #eee;
+    margin: 5px 0px;
+}
+.input-qntyt-paniar{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+.input-qntyt-paniar input[type='number']{
+    max-width: 67px;
+}
+.detail-panar{
+    width: 41%;
+    border: 1px solid #eee;
+    border-radius: 8px 8px 0 0;
+    margin: 10px;
+}
+.detail-panar h5{
+    background-color: var(--main-Color);
+    text-align: center;
+    font-variant: small-caps;
+    padding: 5px;
+    border-radius: 8px 8px 0 0;
+}
+.body-details-product{
+    margin: 5px 0 ;
+    display: flex;
+    border-top: 1px solid #eee;
+    padding: 8px;
+}
+.body-details-product img {
+    width: 90px;
+    height: 90px;
+}
+.body-details-product div:first-child{
+    display: flex;
+    width: 100%; 
+    position:relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.body-details-product div:nth-child(2) h6{
+    padding: 0 3px 0 3px;
+}
+
+.quantity {
+    position: relative;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+  {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number]
+  {
+    -moz-appearance: textfield;
+  }
+  
+  .quantity input {
+    width: 45px;
+    height: 42px;
+    line-height: 1.65;
+    float: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    border: 1px solid #eee;
+  }
+  
+  .quantity input:focus {
+    outline: 0;
+  }
+  
+  .quantity-nav {
+    float: left;
+    position: relative;
+    height: 42px;
+  }
+  
+  .quantity-button {
+    position: relative;
+    cursor: pointer;
+    border-left: 1px solid #eee;
+    width: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+    line-height: 1.7;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  
+  .quantity-button.quantity-up {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    left: 19px;
+    background-color: #eee;
+  }
+  
+  .quantity-button.quantity-down {
+    position: absolute;
+    bottom: -1px;
+    height: 50%;
+    left: 19px;
+    background-color: #eee;
+  }
+/*************************************End  page Panair */
+
 /*************************************Start Command */
 
 .Commander{
@@ -539,7 +682,7 @@ right: -10px;
     justify-content: center;
     grid-gap: 8px;
     grid-row-gap: 20px; */
-    min-height: 110vh;
+    min-height: 130vh;
     width: 100%;
     margin: 0 auto;
 }
@@ -845,11 +988,11 @@ right: -10px;
     background-color: #222;
     color: white;
     padding: 50px 100px 0px;
-    height: auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     grid-gap:8px ;
+    margin-top: auto;
 }
 .Footer .aboutus{
     width:45%;

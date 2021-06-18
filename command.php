@@ -71,7 +71,7 @@ ob_start();
                                     </div>
                                     <div style="text-align: center; border-left: 1px solid #ddd;padding-left: 3px;">
                                         <h6 style='font-weight:bold;'>Quantité</h6>
-                                        <small style='font-weight:bold;' name="QNT">&#215;<?php echo $quantity?></small>
+                                        <small style='font-weight:bold;' class='QNT' name="QNT">&#215;<?php echo $quantity?></small>
                                     </div>
                                     
                                 <?php }
@@ -80,7 +80,6 @@ ob_start();
                             }
                                     
                                 ?>
-                                  
                         </div>
                         <div class="total-pric-command">
                             <h6 style='font-weight:bold;'>Total Prix (<?php echo $count?> Produit<small>(s)</small> ) </h6>

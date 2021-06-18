@@ -66,7 +66,7 @@
                 {
                     // echo "<script>alert('Ce produit déjà existé dans votre panier')</script>";
                     // echo "<script>window.location='index.php'</script>";
-                    header('location:index.php');
+                    header('Location: ' . $_SERVER['PHP_SELF']);
                     exit();
                 }else
                 {
@@ -75,7 +75,7 @@
                         'product_id'=>$_GET['i']
                     );
                     $_SESSION['card-shop'][$count]=$item_array;
-                    header('location:index.php');
+                    header('Location: ' . $_SERVER['PHP_SELF']);
                     exit();
                 }
             }else
@@ -84,7 +84,8 @@
                     'product_id'=>$_GET['i']
                 );
                 $_SESSION['card-shop'][0]=$item_array;
-                
+                header('Location: ' . $_SERVER['PHP_SELF']);
+                exit();
                 
             }
 

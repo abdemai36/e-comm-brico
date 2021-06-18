@@ -307,7 +307,7 @@
                 while($row=mysqli_fetch_array($result)){
                     
                         echo "<div class='produit'>";
-                            echo "<form action='lovely_page.php' method='GET'>";
+                            echo "<form action='' method=''>";
                                 $id=$row['ID_Product'];
                                 $res=$row['Image'];
                                 $res=explode(" ",$res);

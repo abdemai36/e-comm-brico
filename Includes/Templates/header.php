@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
     <link href="Layout/CSS/jquery-ui.css" rel="stylesheet">
-    <link href="Layout/CSS/Style.css" rel="stylesheet"/>
+    <link href="Layout/CSS/Stylee.css" rel="stylesheet"/>
 </head>
 <body>
     <!--Start container-->
@@ -112,6 +112,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-fermer" data-bs-dismiss="modal">Fermer</button>
                     <button type="button" class="btn btn-primary btn-commander">Commender</button>
+                    
                 </div>
                 </div>
             </div>
@@ -205,7 +206,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-fermer" data-bs-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary btn-commander">Commender</button>
+                    <a href="Product_commande.php?do=Added">
+                        <button type="button" class="btn btn-primary btn-commander">Commender</button>
+                    </a>
                 </div>
                 </div>
             </div>
