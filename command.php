@@ -2,10 +2,12 @@
 ob_start();
     include_once('Includes/Templates/connection.php');
     include_once('Includes/Templates/header.php');
+    
+
     if(isset($_POST['submit'])){
             $product_id= $_POST['id'];
             $quantity=$_POST['quantity'];
-           ?>
+            ?>
 
             <div class="Commander">
                 <a href="index.php?page=1" style="color:black;"><i style="margin-right: 9px;" class="fas fa-home"></i></a>
@@ -14,8 +16,8 @@ ob_start();
                     <div class="form-command">
                         <h3 class="notification-send"></h3>
                         <!--Start form-->
-                        <form class="row g-3" action="" method="" id="from-send">
-                            <input type="hidden" value=<?php echo $quantity;?> name="quantity" >
+                        <form class="row g-3" action="contact.php" method="POST" id="from-send">
+                            <input type="hidden" value=<?php echo $quantity;?> name="quantit" >
                             <div class="col-md-6">
                                 <label for="validationDefault01" class="form-label">Nom <span style="color:red;">*</span></label>
                                 <input type="text" class="form-control l-name" id="validationDefault01" name="l-name" required>
@@ -40,7 +42,7 @@ ob_start();
                                 <input type="text" class="form-control city" name="city" id="validationDefault03" required>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary" type="submit" onclick="sendEmail()" name="submit">Commander</button>
+                                <button class="btn btn-primary" type="submit" name="submit">Commander</button>
                             </div>
                         
                         </form>  

@@ -70,7 +70,7 @@ ob_start();
                                     ?>
                             
                             <div class="controls-qeuntity">
-                                <input type="number" value="1" min="1" max="1000" name="quantity" required>
+                                <input type="number" value="1" min="1" max="100" name="quantity" required>
                                 <button  type="submit" name="submit" class="btn-buy-prod"><i class="fas fa-shopping-basket"></i>Commandez maintenant</button>
                             </div>
                             <div class="contactes">
@@ -150,8 +150,14 @@ ob_start();
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="price">
-                        <h6><span class="new-price"><?php echo $row['Price'];?> dh</span></h6>
-                        <span class="old-price"><?php echo $row['Pric_old'];?> dh</span>
+                        <h6 class="new-price"><span ><?php echo $row['Price'];?> dh</span></h6>
+                        <?php 
+                            if($row['Pric_old']>0){?>
+                                <span class="old-price"><?php echo $row['Pric_old'];?> dh</span>
+                            <?php }elseif($row['Pric_old']==0){?>
+                                <span class="old-price"></span>
+                            <?php }
+                        ?>
                     </div>
 
                     </div>

@@ -21,6 +21,8 @@
         </div>
     </div>
 
+    
+
 <?php
     include_once('Includes/Templates/footer.php');
 ?>

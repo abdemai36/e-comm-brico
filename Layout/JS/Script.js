@@ -8,30 +8,30 @@ $(document).ready(function(){
             }
         });
 
-        function sendEmail(){
-            var name=$(".f-name");
-            var email=$('.email');
-            //var phone=$('.tel');
+        // function sendEmail(){
+        //     var name=$(".f-name");
+        //     var email=$('.email');
+        //     //var phone=$('.tel');
 
-            $.ajax({
-                url:"contact.php",
-                method:"POST",
-                dataType:"json",
-                data:{
-                    name:name.val(),
-                    email:email.val(),
-                },
-                success:function(response){
-                    $('#from-send')[0].reset();
-                    $('.notification-send').text("message sent seccessfult");
-                }
+        //     $.ajax({
+        //         url:"contact.php",
+        //         method:"POST",
+        //         dataType:"json",
+        //         data:{
+        //             name:name.val(),
+        //             email:email.val(),
+        //         },
+        //         success:function(response){
+        //             $('#from-send')[0].reset();
+        //             $('.notification-send').text("message sent seccessfult");
+        //         }
 
-            })
-        }
+        //     })
+        // }
 
         $('#backTop').click(function(){
             $('html , body').animate({scrollTop:0},800);
-            console.log('cc');
+            
         });
     // filter_data();
     // function filter_data(){
@@ -86,20 +86,6 @@ $(document).ready(function(){
             ]
     });
 
-    $('#price-range').slider({
-        
-        range:true,
-        min:300,
-        max:10000,
-        values:[300,10000],
-        step:100,
-        stop:function(event,ui){
-            $('#text-show-price').html(ui.values[0]+' - '+ui.values[1]);
-            $('#hidden_minimum_price').val(ui.values[0]);
-            $('#hidden_maximum_price').val(ui.values[1]);
-            filter_data();
-        }
-    });
 
     /************delete product the card heard */
     $('.btn-delete').click(function(){
@@ -169,27 +155,6 @@ $(document).ready(function(){
 
 
 
-
-
-        // var iprice=$('.iprice');
-        // var QNT=$('.qnt');
-        // var total=$('.itotal');
-        // var res=0;
-        // for(var i=0;i<QNT.length;i++){
-        //     //res=QNT[i].val();
-        //     alert(iprice.val());
-        //     //total.text(res)=QNT
-        // }
-        // $(".iprice").each(function(){
-        //     var iprice=$('.iprice').val();
-        //     alert(iprice);
-            
-        // });
-        // $(".qnt").each(function(){
-        //     var qnt=$('.qnt').val();
-        //     //alert(iprice);
-        //     alert(qnt);
-        // });
     
 
 
@@ -215,9 +180,6 @@ function suTotal(){
 }
 
 suTotal();
-/***************************Tooltips*******************************/
 
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+
+

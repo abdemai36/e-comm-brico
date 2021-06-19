@@ -74,10 +74,13 @@
 
         </div>
 
-   
-
+   <div>
+ 
         <!--End Section-->
 
+
+
 <?php
+
     include_once('Includes/Templates/footer.php');
 ?>

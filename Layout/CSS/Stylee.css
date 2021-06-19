@@ -10,7 +10,13 @@ ul{
     list-style-type: none;
     padding: 0%;
 }
-
+a{
+    text-decoration: none;
+    color: #000;
+}
+#slick-slide-control20,#slick-slide-control21,#slick-slide-control22{
+    display: none;
+}
 ::-webkit-scrollbar{
     width: 12px;
 }
@@ -57,7 +63,15 @@ ul{
     ;
 }
 
-
+.Public{
+    display: flex;
+    height: 500px;
+    margin: 0 20px;
+    
+}
+.Public .carousel{
+    width: 100%;
+}
 /*************************************Start  page Panair */
 .procudt-panair img{
     width: 15%;
@@ -100,7 +114,7 @@ ul{
     margin: 10px;
 }
 .detail-panar h5{
-    background-color: var(--main-Color);
+    background-color: #eee;
     text-align: center;
     font-variant: small-caps;
     padding: 5px;
@@ -206,7 +220,7 @@ ul{
 .Commander{
     grid-area: Commander;
     width: 100%;
-    height: 100vh;
+    min-height: 101vh;
 }
 .Commander .titel-commande{
     border-bottom: 2px solid var(--main-Color);
@@ -380,7 +394,8 @@ ul{
 
 
 .controls-qeuntity input[type="number"]{
-    border-radius: 12px;
+    height: 43px;
+    border-radius: 8px 0px 0px 8px;
     padding: 5px 10px;
     border: 1px solid var(--main-Color);
 }
@@ -412,10 +427,12 @@ ul{
     font-size: 14px;
     background-color: var(--main-Color);
     padding: 10px 20px;
-    border-radius: 12px;
+    border-radius: 0 0 0 0;
     border: 1px solid var(--main-Color);
-    font-weight: 600;
+    font-weight: bold;
     transition: all .5s;
+    display: inline-block;
+    width: 100%;
 }
 .btn-buy-prod:hover {
     background-color: transparent;
@@ -682,9 +699,9 @@ right: -10px;
     justify-content: center;
     grid-gap: 8px;
     grid-row-gap: 20px; */
-    min-height: 130vh;
+    min-height: 110vh;
     width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 .rows{
     display: flex;
@@ -703,6 +720,7 @@ right: -10px;
     cursor: pointer;
     transition: all .5s;
     margin:0 5px 10px 5px ;
+    word-break: break-all;
 }
 .produit:hover{
     box-shadow: 0px 0px 40px -10px rgba(0, 0 0,0.25);
@@ -743,6 +761,9 @@ right: -10px;
     height: 21px;
     margin: 10px;
 }
+.title-prod{
+    padding: 0 5px;
+}
 .title-produit a{
     font-size: 16px;
     margin-top: 22px;
@@ -750,7 +771,7 @@ right: -10px;
     color: black;
     min-height: 66px;
     width: 100%;
-    padding: 0 5px;
+    
 }
 .starts-icon{  
     padding: 0 5px;
@@ -760,20 +781,20 @@ right: -10px;
     color: var(--main-Color);
 }
 
-.produit .price span{
+/* .produit .price span{
     text-align: center;
     display: block;
     width: 100%;
     margin: 0 auto;
     color: var(--main-Color);
-}
+} */
 .produit .price .new-price{
     font-size: 25px;
     font-weight: bold;
-    max-width: 100%;
     position: relative;
-    background-color: #fff;
-
+    margin: 0 auto;
+    color: var(--main-Color);
+    text-align: center;
 }
 .produit .price .new-price::before{
     content: "";
@@ -798,6 +819,9 @@ right: -10px;
 .old-price{
     text-decoration-line: line-through;
     font-size: 17px;
+    display: block;
+    text-align: center;
+    color: var(--main-Color);
 }
 .Main .h3-marque{
     display: block;
@@ -895,12 +919,7 @@ right: -10px;
     margin: 0 auto;
     overflow: hidden;
 }
-.produit{
-    display: inline-block;
-        width: 231px;
-    height: 378px;
-    margin: 5px;
-}
+
 .slick-track{
     display: flex;
     align-items: center;
@@ -930,7 +949,7 @@ right: -10px;
     color:black;
 }
 .btn-afficher{
-    display: inline-block;
+    display: table;
     margin: 20px auto;
     padding: 14px 45px;
     background-color: var(--main-Color);
@@ -1076,12 +1095,17 @@ right: -10px;
         grid-template-columns: 1fr 4fr;
         grid-template-areas:
         "NavBar NavBar"
+        "SidBar-sec SidBar-sec"
         "Main Main"
         "Section Section"
         "Commander Commander"
         "section_marque section_marque"
         "Footer Footer"
         ;
+    }
+    .SidBar-sec::-webkit-scrollbar{
+        width: 0 !important;
+        height: 0;
     }
     .List-Navbar{
         display: none;
@@ -1092,7 +1116,9 @@ right: -10px;
     .produit{
         width: 47%;
     }
-
+    .Main{
+        min-height: auto;
+    }
     /*********************************Start page Card responsive********************************/
     .Card{
             flex-direction: column;
@@ -1107,10 +1133,11 @@ right: -10px;
     }
     .Card-body .controls-qeuntity{
         flex-basis: 70px;
+        align-items: center;
     }
  
     .controls-qeuntity input[type="number"]{
-        border-radius: 12px;
+        border-radius: 8px 0px 0px 8px;
         width: 111px;
         padding: 5px 15px;
     }
@@ -1135,20 +1162,97 @@ right: -10px;
 
     /*********************************End page SidBar responsive********************************/
 
+    .btn-afficher{
+        padding: 8px 33px;
+        font-size: 14px;
+    }
+    .btn-buy-prod{
+        font-size: 12px;
+        padding: 8px 23px;
+        margin: 17px auto;
+    }
+    input[type="number"]:focus{
+        outline: none;
+    }
+    .nbr-page{
+        font-size: 14px;
+    }
+    .fa-home{
+        margin-right: 9px;
+        font-size: 20px;
+        margin-left: 6px;
+    }
+    .Card-images .small-imgs img{
+        width: 60px;
+        height: 60px;
+    }
+    .copyright{
+        font-size: 12px;
+    }
+    /*********************************Start page SidBar responsive********************************/
+
+    /*********************************Start page SidBar-sec responsive********************************/
+   
+    .SidBar-sec{
+        grid-area: SidBar-sec;
+        display: block;
+        height: auto;
+        overflow: auto;
+        width: 100vw;
+    }
+    .SidBar-sec img , .SidBar-sec h5{
+        display: none;
+
+    }
+    .SidBar ul li{
+        margin: 4px;
+        padding: 4px;
+        border-bottom: 1px solid #eee;
+    }
+    .SidBar ul{
+        display: flex;
+    }
+    .SidBar ul li a {
+        width: max-content;
+    }
+    /*********************************End page SidBar-sec responsive********************************/
 
 
 
-    /*********************************Start page Main responsive********************************/
-
-    /*********************************End page Main responsive********************************/
-
-
-
-
-    /*********************************Start page Section responsive********************************/
-
-
-    /*********************************End page Section responsive********************************/
+    /*********************************Start page panier responsive********************************/
+    .panier{
+        flex-direction: column;
+    }
+    .detail-panar{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .procudt-panair{
+        width: 100%;
+        justify-content: normal;
+        margin-bottom: 19px;
+    }
+    .body-product-panair{
+        display: flex;
+        justify-content: normal;
+    }
+    .body-product-panair h6{
+        width: 40%;
+        font-size: 14px;
+    }
+    .input-qntyt-paniar{
+        display: flex;
+        justify-content: space-between;
+        width: 45%;
+    }
+    .fa-shopping-basket{
+        font-size: 19px;;
+        margin-right: 9px;
+    }
+    .h3-categ{
+        font-size: 15px;
+    }
+    /*********************************End page panier responsive********************************/
 
     /*********************************Start page footer responsive********************************/
     .Footer{
@@ -1161,6 +1265,9 @@ right: -10px;
         width:100%;
         height:450px;
     }
+    .Footer .map{
+        width: 100%;
+    }
     /*********************************End page footer responsive********************************/
 }
 @media (min-width:768px){/*Small screen*/
@@ -1172,6 +1279,7 @@ right: -10px;
         grid-template-columns: 1fr 4fr;
         grid-template-areas:
         "NavBar NavBar"
+        "SidBar-sec SidBar-sec"
         "Main Main"
         "Section Section"
         "Commander Commander"
@@ -1209,11 +1317,98 @@ right: -10px;
 
     /*********************************Start page Main responsive********************************/
 
+
+    /*********************************Start page SidBar-sec responsive********************************/
+    .SidBar-sec{
+        grid-area: SidBar-sec;
+        display: block;
+        height: auto;
+        overflow: auto;
+        width: 100vw;
+    }
+    .SidBar-sec img , .SidBar-sec h5{
+        display: none;
+
+    }
+    .SidBar ul li{
+        margin: 4px;
+        padding: 4px;
+        border-bottom: 1px solid #eee;
+    }
+    .SidBar ul{
+        display: flex;
+    }
+    .SidBar ul li a {
+        width: max-content;
+    }
+    /*********************************End page SidBar-sec responsive********************************/
+
+
+    /*********************************Start page panier responsive********************************/
+    /* .panier{
+        flex-direction: column;
+    }
+    .detail-panar{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .procudt-panair{
+        width: 100%;
+        justify-content: normal;
+        margin-bottom: 19px;
+    }
+    .body-product-panair{
+        display: flex;
+        justify-content: normal;
+    }
+    .body-product-panair h6{
+        width: 40%;
+        font-size: 14px;
+    }
+    .input-qntyt-paniar{
+        display: flex;
+        justify-content: space-between;
+        width: 45%;
+    }
+    .fa-shopping-basket{
+        font-size: 19px;;
+        margin-right: 9px;
+    }
+    .h3-categ{
+        font-size: 15px;
+    } */
+    /*********************************End page panier responsive********************************/
+
     /*********************************End page Main responsive********************************/
 
 
-
-
+    /* .btn-afficher{
+        padding: 8px 33px;
+        font-size: 14px;
+    }
+    .btn-buy-prod{
+        font-size: 12px;
+        padding: 8px 23px;
+        margin: 17px auto;
+    }
+    input[type="number"]:focus{
+        outline: none;
+    }
+    .nbr-page{
+        font-size: 14px;
+    }
+    .fa-home{
+        margin-right: 9px;
+        font-size: 20px;
+        margin-left: 6px;
+    }
+    .Card-images .small-imgs img{
+        width: 60px;
+        height: 60px;
+    }
+    .copyright{
+        font-size: 12px;
+    } */
     /*********************************Start page Section responsive********************************/
 
         /*********************************Start page footer responsive********************************/
@@ -1227,6 +1422,9 @@ right: -10px;
             width:100%;
             height:450px;
         }
+        /* .Footer .map{
+            width: 100%;
+        } */
         /*********************************End page footer responsive********************************/
 
 
@@ -1244,6 +1442,7 @@ right: -10px;
         grid-template-columns: 1fr 4fr;
         grid-template-areas:
         "NavBar NavBar"
+        "SidBar-sec SidBar-sec"
         "Main Main"
         "Section Section"
         "Commander Commander"
@@ -1267,6 +1466,36 @@ right: -10px;
 
     /*********************************End page SidBar responsive********************************/
 
+ /*********************************Start page SidBar-sec responsive********************************/
+    .SidBar-sec{
+        grid-area: SidBar-sec;
+        display: block;
+        height: auto;
+        overflow: auto;
+        width: 100vw;
+    }
+    .SidBar-sec img , .SidBar-sec h5{
+        display: none;
+
+    }
+    .SidBar ul li{
+        margin: 4px;
+        padding: 4px;
+        border-bottom: 1px solid #eee;
+    }
+    .SidBar ul{
+        display: flex;
+    }
+    .SidBar ul li a {
+        width: max-content;
+        padding: 0 16px;
+    }
+/*********************************End page SidBar-sec responsive********************************/
+    .fa-home{
+        margin-right: 9px;
+        margin: 20px 13px 0px 10px;
+    }
+    
     /*********************************Start page footer responsive********************************/
     .Footer{
         padding: 50px 100px 0px;
@@ -1283,29 +1512,29 @@ right: -10px;
 
 @media (min-width:1200px){/*Larg screen*/
 
-.container-Grid{
+    .container-Grid{
 
-    display: grid;
-    /* grid-gap: 10px; */
-    grid-template-columns: 1fr 4fr;
-    grid-template-areas:
-    "NavBar NavBar"
-    "SidBar Main"
-    "SidBar Main"
-    "SidBar Section"
-    "Commander Commander"
-    ". section_marque"
-    "Footer Footer"
-    ;
-}
-.SidBar{
-    display: block;
-}
+        display: grid;
+        /* grid-gap: 10px; */
+        grid-template-columns: 1fr 4fr;
+        grid-template-areas:
+        "NavBar NavBar"
+        "SidBar Main"
+        "SidBar Main"
+        "SidBar Section"
+        "Commander Commander"
+        ". section_marque"
+        "Footer Footer"
+        ;
+    }
+    .SidBar{
+        display: block;
+    }
 
     /*********************************Start page SidBar responsive********************************/
-.produit{
-    width: 19%;
-}
+    .produit{
+        width: 19%;
+    }
     /*********************************End page SidBar responsive********************************/
     .command-body{
         flex-direction: row;
@@ -1318,7 +1547,74 @@ right: -10px;
     }
 
     /*********************************Start page Main responsive********************************/
+    
+    /*********************************Start page SidBar-sec responsive********************************/
+    .SidBar{
+        grid-area: SidBar;
+        height: 500px;
+        width: 290px;
+    }
+    
+    .SidBar img{
+        width: 100%;
+        max-height: 560px;
+        margin: 20px auto;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .SidBar h5{
+        background-color: var(--main-Color);
+        padding: 13px;
+        text-align: center;
+        letter-spacing: 1px;
+        font-weight: bold;
+        cursor: auto;
+    }
+    .SidBar ul {
+        margin: 16px 0 16px 8px;
+    }
+    .SidBar ul li{
+        width: 100%;
+        margin: 4px;
+        padding: 4px;
+        height: 100%;
+        transition: all 0.5s;
+        border-bottom: 1px solid #eee;
+    }
+    .SidBar ul li:hover{
+        transform: scale(1.1,1.1);
+    }
+    .SidBar ul li a{
+        text-decoration: none;
+        color: black;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        font-size: 20px;
+        padding: 0;
+    }
+    .SidBar ul li a:hover{
+        color: #aaa;
+    
+    }
+    .SidBar-sec{
 
+        display: block;
+        height: auto;
+        
+    }
+    .SidBar-sec img , .SidBar-sec h5{
+        display: block;
+
+    }
+    .SidBar ul{
+        display: block;
+    }
+    .SidBar-sec::-webkit-scrollbar{
+        width: 0 !important;
+        height: 0;
+    }
+    /*********************************End page SidBar-sec responsive********************************/
     /*********************************End page Main responsive********************************/
     /*********************************Start page footer responsive********************************/
     .Footer{

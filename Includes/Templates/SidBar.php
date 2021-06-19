@@ -5,7 +5,7 @@
       $categ_result=mysqli_query($conx,$categ_query);
 ?>
         <!--Start  SidBar -->
-        <div class="SidBar">
+        <div class="SidBar SidBar-sec">
             
             <h5>Les Catégories</h5>
             <ul>

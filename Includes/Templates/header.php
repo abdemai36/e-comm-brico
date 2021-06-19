@@ -111,8 +111,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-fermer" data-bs-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary btn-commander">Commender</button>
-                    
+                    <a href="Product_commande.php?do=prefer">
+                        <button type="button" class="btn btn-primary btn-commander">Commender</button>
+                    </a>
                 </div>
                 </div>
             </div>

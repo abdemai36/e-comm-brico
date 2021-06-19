@@ -6,6 +6,34 @@ ob_start();
 
  <!--Start  Main -->
  <div class="Main">
+     <div class="Public">   
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="Admin/avatar/444_50bv30-acier-au-chrome-vanadium.jpg" style="height:500px; width:100%;" >
+                </div>
+                <div class="carousel-item">
+                <img src="Admin/avatar/444_50bv30-acier-au-chrome-vanadium.jpg" style="height:500px; width:100%;" >
+                </div>
+                <div class="carousel-item">
+                <img src="Admin/avatar/444_50bv30-acier-au-chrome-vanadium.jpg" style="height:500px; width:100%;" >
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+     </div>
             <?php
             if(!isset($_GET['page']))
             {
@@ -93,7 +121,9 @@ ob_start();
                                     $count=count($res)-1;
                                     for($i=0;$i<1;$i++)
                                     {?>
+                                    <a href="view_ly_Pr.php?id=<?php echo $id?>" style="text-decoration:none; color:#000;">
                                         <img class="img-produit" src='Admin/avatar/<?php echo $res[$i];?>'/>
+                                    </a>
                             <?php }?>
 
                             <hr style="color:#ffc400;width:100%;">
@@ -120,8 +150,14 @@ ob_start();
                                 <i class="fas fa-star"></i>
                             </div>
                             <div class="price">
-                                <h6 class="new-price"><span ><?php echo $row['Price'];?> dh</span></h6>
-                                <span class="old-price"><?php echo $row['Pric_old'];?> dh</span>
+                                <h6 class="new-price"><span style="background:#fff;"><?php echo $row['Price'];?> dh</span></h6>
+                                <?php 
+                                    if($row['Pric_old']>0){?>
+                                        <span class="old-price"><?php echo $row['Pric_old'];?> dh</span>
+                                    <?php }elseif($row['Pric_old']==0){?>
+                                        <span class="old-price"></span>
+                                    <?php }
+                                ?>
                             </div>
                         </div>
                 <?php    }
@@ -196,7 +232,9 @@ ob_start();
                                                 $res=explode(" ",$res);
                                                 $count=count($res)-1;
                                                 for($i=0;$i<1;$i++){?>
-                                                    <img class='img-produit' src='Admin/avatar/<?php echo $res[$i];?>'/>
+                                                    <a href="view_ly_Pr.php?id=<?php echo $id?>" style="text-decoration:none; color:#000;">
+                                                        <img class='img-produit' src='Admin/avatar/<?php echo $res[$i];?>'/>
+                                                    </a>
                                                 <?php }
                                             ?>
 
@@ -224,8 +262,15 @@ ob_start();
                                                     <i class="fas fa-star"></i>
                                                 </div>
                                                 <div class="price">
-                                                    <span class="new-price"><?php echo $row1['Price'];?> dh</span>
-                                                    <span class="old-price"><?php echo $row1['Pric_old'];?> dh</span>
+                                                    <h6 class="new-price"><span><?php echo $row1['Price'];?> dh</span></h6>
+                                                    <?php 
+                                                        if($row1['Pric_old']>0){?>
+                                                            <span class="old-price"><?php echo $row1['Pric_old'];?> dh</span>
+                                                        <?php }elseif($row1['Pric_old']==0){?>
+                                                            <span class="old-price"></span>
+                                                        <?php }
+                                                    ?>
+                                                    
                                                 </div>
                                             </form>
                                         </div>
@@ -236,7 +281,7 @@ ob_start();
                                 ?>
                                 </div>
                             </div>
-                            <a href="All_product_categ.php?id=<?php echo $ro[1];?>&page=1" class="btn-afficher">Vois plus</a>
+                            <a href="All_product_categ.php?id=<?php echo $ro[1];?>&page=1" class="btn-afficher">Vois plus...</a>
                         <?php }
 
                     }
@@ -247,11 +292,8 @@ ob_start();
         </div>
         <!--End Section-->
 
-        <!--Start  Main -->
-        <div class="Footer">
-            footer
-        </div>
-        <!--End Main-->
+       
+
 
 <?php
     ob_end_flush();

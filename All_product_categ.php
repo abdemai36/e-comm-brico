@@ -91,7 +91,7 @@
                                     <?php 
                                         for($i=0;$i<1;$i++){
 
-                                            echo "<img ' src='Admin/avatar/$res[$i]'/>";
+                                            echo "<img src='Admin/avatar/$res[$i]'/>";
                                             
                                         }
                                     ?>
@@ -184,7 +184,7 @@
                                     <?php 
                                         for($i=0;$i<1;$i++){
 
-                                            echo "<img ' src='Admin/avatar/$res[$i]'/>";
+                                            echo "<img src='Admin/avatar/$res[$i]'/>";
                                             
                                         }
                                     ?>
@@ -313,8 +313,9 @@
                                 $res=explode(" ",$res);
                                 $count=count($res)-1;
                                 for($i=0;$i<1;$i++){
-
+                                    echo  "<a href='view_ly_Pr.php?id=".$id."' style='text-decoration:none; color:#000;'>";
                                     echo "<img class='img-produit' src='Admin/avatar/$res[$i]'/>";
+                                    echo "</a>";
                                 }
                                 echo "<hr style='color:#ffc400;  width:100%;'>";?>
                                     <div class="icon-heart">
@@ -340,7 +341,7 @@
                                 echo "</div>";
                                 echo "<div class='price'>";?>
                                     
-                                        <h6><span class='new-price'><?php echo $row['Price']?>dh</span></h6>
+                                        <h6 class='new-price'><span ><?php echo $row['Price']?>dh</span></h6>
                                     <?php
                                     if($row['Pric_old']<=0){
                                         echo "<span class='old-price'></span>";

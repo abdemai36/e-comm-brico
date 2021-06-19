@@ -4,7 +4,8 @@
             include_once('Includes/Templates/section_M.php');
     ?>
 
-    <!--Start  Main -->
+
+        <!--Start  Main -->
         <div class="Footer">
             
             <div class="aboutus">
@@ -43,11 +44,10 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6903.576080284536!2d-9.554347455089362!3d30.1002562065125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb394ae2ccb2143%3A0x6f6a7554c818caed!2sSouk%20Hebdomadaire%20Mercredi%2C%20P30%2C%20Commune%20rurale%20Incaden!5e0!3m2!1sfr!2sma!4v1623794990805!5m2!1sfr!2sma" class="google-map" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="copyright">
-                <p>&copy; Bricobakir.ma - Tous droits réservés</p>
+                <p>&copy; Bricobakir.ma - Tous droits réservés 2020 - <?php echo date("Y");?></p>
             </div>
         </div>
         <!--End Main-->
-    </div>
         <!--End Container-->
     <!-- JavaScript Bundle with Popper -->  
     

@@ -1,6 +1,9 @@
 <?php
-    session_start();
+    ob_start();
     include "Includes/Templates/connection.php";
+    include_once('Includes/Templates/header.php');
+    include_once('Includes/Templates/SidBar.php');
+
     $pageTitle='Login';
     if($_SERVER["REQUEST_METHOD"]=='POST'){
 
@@ -31,7 +34,7 @@
     }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,29 +45,36 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
     <link href="Layout/CSS/StyleSite.css" rel="stylesheet"/>
 </head>
-<body>
-    <div class="container">
-        <h1 class="text-center mt-5">Se Connecter</h1>
-        <form action="" method="POST">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nom complet</label>
-                <input type="text" class="form-control inputLogin" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control inputLogin" name="pass" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <a href="#" class="form-check-label">j'ai oublie mot de passe ?</a>
-            </div>
-            <button type="submit" name="submit" class="btn btn-primary">valider</button>
-            
-            <br>
-            <center>
-                <a href="SignUp.php" class="pasCompte">Pas de Compte ?</a>
-            </center>
-        </form>
-        
+<body> -->
+
+    <div class="Main">
+    <a href="index.php?page=1" style="color:black;"><i style="margin-right: 9px;" class="fas fa-home"></i></a>
+        <div class="container">
+            <h1 class="text-center mt-5">Se Connecter</h1>
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nom complet</label>
+                    <input type="text" class="form-control inputLogin" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control inputLogin" name="pass" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                    <a href="#" class="form-check-label" style="font-weight:bold;">j'ai oublie mot de passe ?</a>
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary">valider</button>
+                
+                <br>
+                <center>
+                    <a href="SignUp.php" style="font-weight:bold;">Pas de Compte ?</a>
+                </center>
+            </form>
+        </div>
     </div>
-</body>
-</html>
+<!-- </body>
+</html> -->
+<?php
+    ob_end_flush();
+    include_once('Includes/Templates/footer.php');
+?>
